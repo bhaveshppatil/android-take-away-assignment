@@ -5,8 +5,8 @@ import com.bhavesh.itunesapp.di.Module
 import com.bhavesh.itunesapp.remote.model.ItunesResponse
 import com.masai.movieapp.Remote.Resource
 import com.masai.movieapp.Remote.ResponseHandler
-import com.masai.movieapp.room.ITunesDAO
-import com.masai.movieapp.room.ITunesTable
+import com.bhavesh.itunesapp.room.ITunesDAO
+import com.bhavesh.itunesapp.room.ITunesTable
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,6 +28,7 @@ class ItunesRepository @Inject constructor(private val iTunesDAO: ITunesDAO) {
 
     fun addItunesDataToRoom(ITunesData: ITunesTable) {
         CoroutineScope(Dispatchers.IO).launch {
+            iTunesDAO.deleteDataFromDB()
             iTunesDAO.insertData(ITunesData)
         }
     }

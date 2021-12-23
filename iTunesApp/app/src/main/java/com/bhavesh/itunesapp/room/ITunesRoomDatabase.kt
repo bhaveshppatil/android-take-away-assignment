@@ -1,9 +1,9 @@
-package com.masai.movieapp.room
+package com.bhavesh.itunesapp.room
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.bhavesh.itunesapp.room.ITunesDAO
+import com.bhavesh.itunesapp.room.ITunesTable
 
 //database class which returns the instance of our database
 @Database(entities = [ITunesTable::class], version = 1)

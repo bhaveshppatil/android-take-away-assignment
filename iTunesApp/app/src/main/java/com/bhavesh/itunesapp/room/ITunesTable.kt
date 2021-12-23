@@ -1,4 +1,4 @@
-package com.masai.movieapp.room
+package com.bhavesh.itunesapp.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,7 +1,8 @@
-package com.masai.movieapp.room
+package com.bhavesh.itunesapp.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.bhavesh.itunesapp.room.ITunesTable
 
 //Data Access Object
 @Dao

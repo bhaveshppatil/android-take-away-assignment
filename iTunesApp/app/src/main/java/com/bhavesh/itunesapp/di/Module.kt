@@ -3,8 +3,8 @@ package com.bhavesh.itunesapp.di
 import android.content.Context
 import androidx.room.Room
 import com.bhavesh.itunesapp.remote.ApiService
-import com.masai.movieapp.room.ITunesDAO
-import com.masai.movieapp.room.ITunesRoomDatabase
+import com.bhavesh.itunesapp.room.ITunesDAO
+import com.bhavesh.itunesapp.room.ITunesRoomDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

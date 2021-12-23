@@ -16,7 +16,7 @@ import com.bhavesh.itunesapp.remote.clicklistener.ClickListener
 import com.bhavesh.itunesapp.remote.model.Results
 import com.bhavesh.itunesapp.viewModel.ItunesViewModel
 import com.masai.movieapp.Remote.Status
-import com.masai.movieapp.room.ITunesTable
+import com.bhavesh.itunesapp.room.ITunesTable
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -60,12 +60,11 @@ class MainActivity : AppCompatActivity(), ClickListener {
                 Status.SUCCESS -> {
                     resultList.clear()
                     it.data?.results?.let {
-
                         resultList.addAll(it)
                         itunesAdapter.notifyDataSetChanged()
                     }
                     CoroutineScope(Dispatchers.Default).launch {
-                        it.data?.results?.let { it1 -> insertDataToDb(it1) }
+                        insertDataToDb(it.data!!.results)
                     }
                 }
             }
@@ -74,7 +73,7 @@ class MainActivity : AppCompatActivity(), ClickListener {
     }
 
     private fun insertDataToDb(resultModels: List<Results>) {
-
+        itunesViewModel.deleteData();
         resultModels.forEach {
             val iTunesTable = ITunesTable(
                 it.trackName,

@@ -6,7 +6,7 @@ import androidx.lifecycle.liveData
 import com.bhavesh.itunesapp.remote.model.ItunesResponse
 import com.bhavesh.itunesapp.repository.ItunesRepository
 import com.masai.movieapp.Remote.Resource
-import com.masai.movieapp.room.ITunesTable
+import com.bhavesh.itunesapp.room.ITunesTable
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
@@ -26,6 +26,7 @@ class ItunesViewModel @Inject constructor(private val repository: ItunesReposito
     }
 
     fun insertData(iTunesTable: ITunesTable) {
+
         repository.addItunesDataToRoom(iTunesTable)
     }
 
