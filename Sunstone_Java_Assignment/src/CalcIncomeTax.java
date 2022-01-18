@@ -14,11 +14,11 @@ public class CalcIncomeTax {
         if (salary <= 50000) {
             total_tax = 0;
         } else if (salary <= 60000) {
-            total_tax = 0.1 * (salary - 50000);
+            total_tax =(salary - 50000) * 0.1;
         } else if (salary <= 150000) {
-            total_tax = (0.2 * (salary -60000) + 1000);
+            total_tax = ((salary -60000) * 0.2 + 1000);
         }else {
-            total_tax = (0.3 * (salary - 150000) + 18000 + 1000);
+            total_tax = ((salary - 150000) * 0.3 + 19000);
         }
         return total_tax;
     }
