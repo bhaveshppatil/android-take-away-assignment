@@ -8,6 +8,6 @@ import retrofit2.http.Query
 
 interface ApiClient {
 
-    @GET("/3/movie/popular?api_key=bbf5a3000e95f1dddf266b5e187d4b21")
+    @GET("/3/movie/popular?api_key=API_Key")
     suspend fun getMovieData(@Query("page") page: Int): ResponseMovie
 }
